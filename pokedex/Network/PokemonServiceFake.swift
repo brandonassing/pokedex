@@ -1,7 +1,7 @@
 
-class NetworkServiceFake: NetworkServicing {
+class PokemonServiceFake: PokemonServicing {
     var getPokemonResponseResult: Result<PokemonResponse, Error> = .failure(TestError.test)
-    func getPokemon(limit: Int, page: Int) async throws -> PokemonResponse {
+    func getPokemon(limit: Int, offset: Int) async throws -> PokemonResponse {
         switch getPokemonResponseResult {
         case .success(let value):
             return value
